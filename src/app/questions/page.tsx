@@ -77,9 +77,9 @@ export default function Questions() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-8">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-2xl">
-        <h1 className="text-2xl font-normal text-black mb-9">{currentQuestion.label}</h1>
+        <h1 className="text-xl sm:text-2xl font-normal mb-9">{currentQuestion.label}</h1>
 
         {currentQuestion.id === 'name' && (
           <div className="mb-3">
@@ -87,7 +87,7 @@ export default function Questions() {
               type="text"
               value={formData[currentQuestion.id]}
               placeholder={currentQuestion.placeholder}
-              className="appearance-none w-full h-[3.125rem] text-3xl text-black placeholder-black/30 pb-3 bg-transparent border-b border-b-black/30 focus:border-b-2 focus:border-b-black outline-none transition-colors"
+              className="appearance-none w-full h-[3.125rem] text-2xl sm:text-3xl placeholder-black/30 pb-3 bg-transparent border-b border-b-black/30 focus:border-b-2 focus:border-b-black outline-none transition-colors"
               autoFocus={currentQuestion.id === 'name'}
               onKeyDown={handleKeyPress}
               onChange={(e) => handleInputChange(e.target.value)}
@@ -111,13 +111,13 @@ export default function Questions() {
                     className={`size-6 border border-black flex items-center justify-center ${
                       formData[currentQuestion.id as keyof typeof formData] === option.value
                         ? 'bg-black text-yellow-400'
-                        : 'bg-yellow-400 text-black'
+                        : 'bg-yellow-400'
                     }`}
                   >
                     <span className="text-xs leading-none font-sans font-bold">{option.value}</span>
                   </div>
                 </div>
-                <span className="flex-1 inline-flex items-center justify-between text-xl text-black">
+                <span className="flex-1 inline-flex items-center justify-between text-xl">
                   {option.label}
                   {formData[currentQuestion.id as keyof typeof formData] === option.value && (
                     <Check size={20} />
@@ -138,18 +138,20 @@ export default function Questions() {
           </div>
         )}
 
-        <div className="flex items-center gap-3">
-          <button
-            className="bg-gray-800 text-white text-xl font-bold py-2 px-4 rounded cursor-pointer hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
-            disabled={isButtonDisabled}
-            onClick={handleNext}
-          >
-            {isSubmitButton ? 'Enviar' : 'OK'}
-          </button>
+        <div className="w-[calc(100%-2rem)] absolute bottom-4 left-1/2 -translate-x-1/2 sm:w-auto sm:relative sm:bottom-auto sm:left-auto sm:translate-x-0">
+          <div className="flex items-center gap-3">
+            <button
+              className="w-full sm:w-auto bg-gray-800 text-white text-xl font-bold py-2 px-4 rounded cursor-pointer hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+              disabled={isButtonDisabled}
+              onClick={handleNext}
+            >
+              {isSubmitButton ? 'Enviar' : 'OK'}
+            </button>
 
-          <span className="flex items-center gap-1 text-sm text-black">
-            Aperte Enter <CornerDownLeft size={14} />
-          </span>
+            <span className="hidden sm:flex items-center gap-1 text-sm">
+              Aperte Enter <CornerDownLeft size={14} />
+            </span>
+          </div>
         </div>
       </div>
     </div>
