@@ -10,7 +10,11 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   title: 'Lista de Presença - Aniversário da Line',
-  description: 'Confirme sua presença no aniversário da Line.',
+  description: 'Confirme sua presença no aniversário da Tailine.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function RootLayout({
@@ -20,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${oswald.variable} antialiased bg-yellow-400`}>{children}</body>
+      <body className={`${oswald.variable} antialiased bg-yellow-400 text-black`}>{children}</body>
     </html>
   )
 }
