@@ -4,16 +4,18 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
       <div className="max-w-2xl text-center">
-        <h1 className="text-xl sm:text-2xl font-normal mb-3">
-          Bem-vindo! Por favor, confirme sua presença no meu aniversário.
-        </h1>
+        <div className="animate-slide-up">
+          <h1 className="text-xl sm:text-2xl font-normal mb-3">
+            Bem-vindo! Por favor, confirme sua presença no meu aniversário.
+          </h1>
 
-        <p className="text-base sm:text-xl text-black/70 mb-9">
-          Sábado, 26 de julho de 2025 às 19h30
-        </p>
+          <p className="text-base sm:text-xl text-black/70 mb-9">
+            Sábado, 26 de julho de 2025 às 19h30
+          </p>
+        </div>
 
         <div className="w-[calc(100%-2rem)] absolute bottom-4 left-1/2 -translate-x-1/2 sm:w-auto sm:relative sm:bottom-auto sm:left-auto sm:translate-x-0">
-          <div className="relative flex justify-center mb-3">
+          <div className="relative flex justify-center mb-3 animate-slide-up [--animation-delay:0.2s]">
             <a
               role="button"
               href="/questions"
@@ -27,7 +29,7 @@ export default function Home() {
             </span>
           </div>
 
-          <p className="flex items-center justify-center gap-1 text-sm">
+          <p className="flex items-center justify-center gap-1 text-sm animate-slide-up [--animation-delay:0.4s]">
             <Clock size={16} />
             Leva 30 segundos
           </p>
