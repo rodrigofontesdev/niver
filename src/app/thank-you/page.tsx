@@ -6,17 +6,19 @@ export default function ThankYou() {
       <div className="max-w-2xl text-center">
         {hasConfirmed ? (
           <>
-            <h1 className="text-xl sm:text-2xl font-normal mb-6">
+            <h1 className="text-xl sm:text-2xl font-normal mb-6 animate-slide-up">
               Obrigada por confirmar sua presença!
             </h1>
 
-            <p className="text-base sm:text-xl text-black/70">
+            <p className="text-base sm:text-xl text-black/70 animate-slide-up [--animation-delay:0.2s]">
               Ebaaa! Espero por você no dia <strong>26 de julho</strong> às <strong>19h30</strong>,
               para juntos comemorar meus 30 anos. A sua presença é muito mais que bem vinda.
             </p>
           </>
         ) : (
-          <h1 className="text-xl sm:text-2xl font-normal">Obrigada por responder!</h1>
+          <h1 className="text-xl sm:text-2xl font-normal animate-slide-up">
+            Obrigada por responder!
+          </h1>
         )}
       </div>
     </div>
