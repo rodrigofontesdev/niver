@@ -24,7 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${oswald.variable} antialiased bg-yellow-400 text-black`}>{children}</body>
+      <body
+        className={`${oswald.variable} font-oswald antialiased bg-yellow-400 text-black overflow-hidden`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
