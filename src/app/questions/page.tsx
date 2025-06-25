@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { Check, CornerDownLeft } from 'lucide-react'
+import { createAnswer } from '@/services/create-answer'
+import { useForm } from '@/contexts/FormContext'
+import { AttendanceOptions } from '@/models'
 
 const questions = [
   {
@@ -17,20 +19,16 @@ const questions = [
     type: 'radio',
     label: 'Posso contar com sua presença no meu aniversário?*',
     options: [
-      { value: 'A', label: 'Com certeza!' },
-      { value: 'B', label: 'Não posso' },
+      { value: 'A', label: AttendanceOptions.A },
+      { value: 'B', label: AttendanceOptions.B },
     ],
     required: true,
   },
 ]
 
 export default function Questions() {
-  const router = useRouter()
+  const { formData, setFormData } = useForm()
   const [currentStep, setCurrentStep] = useState(0)
-  const [formData, setFormData] = useState({
-    name: '',
-    attendance: '',
-  })
 
   const currentQuestion = questions[currentStep]
   const isLastStep = currentStep === questions.length - 1
@@ -38,10 +36,10 @@ export default function Questions() {
   const isSubmitButton = isLastStep && formData[currentQuestion.id as keyof typeof formData]?.trim()
 
   const handleInputChange = (value: string) => {
-    setFormData((prev) => ({
-      ...prev,
+    setFormData({
+      ...formData,
       [currentQuestion.id]: value,
-    }))
+    })
   }
 
   const handleNext = () => {
@@ -66,15 +64,13 @@ export default function Questions() {
     }
 
     if (['a', 'b'].includes(key) && currentQuestion.id === 'attendance') {
-      handleInputChange(formData[currentQuestion.id] !== key.toUpperCase() ? key.toUpperCase() : '')
+      const selectedOption = formData[currentQuestion.id]
+      handleInputChange(selectedOption !== key.toUpperCase() ? key.toUpperCase() : '')
       return
     }
   }
 
-  const handleSubmit = () => {
-    console.log(formData)
-    router.push('/thank-you')
-  }
+  const handleSubmit = async () => await createAnswer(formData)
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
