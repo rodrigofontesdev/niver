@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
 import { Check, CornerDownLeft } from 'lucide-react'
 import { createAnswer } from '@/services/create-answer'
 import { useForm } from '@/contexts/FormContext'
@@ -29,10 +29,12 @@ const questions = [
 export default function Questions() {
   const { formData, setFormData } = useForm()
   const [currentStep, setCurrentStep] = useState(0)
+  const [isPending, startTransition] = useTransition()
 
   const currentQuestion = questions[currentStep]
   const isLastStep = currentStep === questions.length - 1
-  const isButtonDisabled = !formData[currentQuestion.id as keyof typeof formData]?.trim()
+  const isButtonDisabled =
+    !formData[currentQuestion.id as keyof typeof formData]?.trim() || isPending
   const isSubmitButton = isLastStep && formData[currentQuestion.id as keyof typeof formData]?.trim()
 
   const handleInputChange = (value: string) => {
@@ -70,7 +72,11 @@ export default function Questions() {
     }
   }
 
-  const handleSubmit = async () => await createAnswer(formData)
+  const handleSubmit = () => {
+    startTransition(() => {
+      createAnswer(formData)
+    })
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
