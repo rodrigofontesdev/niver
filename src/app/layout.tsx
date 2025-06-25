@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Oswald } from 'next/font/google'
 import './globals.css'
+import { FormProvider } from '../contexts/FormContext'
 
 const oswald = Oswald({
   variable: '--font-oswald',
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${oswald.variable} font-oswald antialiased bg-yellow-400 text-black overflow-hidden`}
       >
-        {children}
+        <FormProvider>{children}</FormProvider>
       </body>
     </html>
   )
