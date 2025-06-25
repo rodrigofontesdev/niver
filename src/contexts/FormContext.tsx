@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, ReactNode } from 'react'
-import { Answer } from '@/services/create-answer'
+import { Answer } from '@/models'
 
 interface FormContextProps {
   formData: Answer

@@ -2,16 +2,7 @@
 
 import { notion } from '@/libs/notion-client'
 import { redirect } from 'next/navigation'
-
-export interface Answer {
-  name: string
-  attendance: string
-}
-
-export enum AttendanceOptions {
-  A = 'Com certeza!',
-  B = 'Não posso',
-}
+import { Answer, AttendanceOptions } from '@/models'
 
 const { NOTION_DATABASE_ID } = process.env
 
