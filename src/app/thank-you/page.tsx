@@ -1,5 +1,21 @@
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { useForm } from '@/contexts/FormContext'
+
 export default function ThankYou() {
-  const hasConfirmed = true
+  const router = useRouter()
+  const { formData, hasConfirmed } = useForm()
+
+  useEffect(() => {
+    if (!formData.attendance) {
+      router.push('/')
+      return
+    }
+  }, [formData.attendance, router])
+
+  if (!formData.attendance) return null
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
