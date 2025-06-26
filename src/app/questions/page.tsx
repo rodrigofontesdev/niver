@@ -60,7 +60,7 @@ export default function Questions() {
   const handleKeyPress = (e: React.KeyboardEvent) => {
     const key = e.key.toLowerCase()
 
-    if (key === 'enter') {
+    if (key === 'enter' && !isPending) {
       handleNext()
       return
     }
