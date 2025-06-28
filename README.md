@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Niver
+
+Niver simplifies the process of collecting and managing birthday party confirmations. The application provides an intuitive user experience for guests to confirm their attendance while automatically storing responses in a Notion database for easy organization and tracking.
+
+## Prerequisites
+
+- Git
+- Node
+- Notion account
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository into a new directory:
+
+```bash
+git clone git@github.com:rodrigofontesdev/niver.git
+```
+
+```bash
+cd niver
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Set up environment variables and configure your variables:
+
+```bash
+cp .env.example .env
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable             | Description                      | Example                            |
+| -------------------- | -------------------------------- | ---------------------------------- |
+| `NOTION_TOKEN`       | Your Internal Integration Secret | `ntn__xxx...`                      |
+| `NOTION_DATABASE_ID` | ID of your Notion database       | `218d9f8ffb08888eb888ef8888ddfa8c` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- Automatic data storage in organized database
+- Personalized confirmation message based on response
+- Optimized for both desktop and mobile devices
+- Full accessibility with Enter key and letter shortcuts
 
-To learn more about Next.js, take a look at the following resources:
+## How to Use
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### For Guests
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Access the application
+2. Click the button on the welcome screen to start the RSVP process
+3. Enter your name in the first question
+4. Select your attendance option
+5. Submit your response and receive a personalized thank you message
 
-## Deploy on Vercel
+### Navigation Tips
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Use **Enter** key to navigate through the form quickly
+- Use **A** or **B** keys to select attendance options
+- The form auto-focuses on inputs for seamless completion
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### For Event Organizers
+
+1. Set up the Notion integration following the environment variables guide
+2. Deploy the application to your preferred hosting platform
+3. Share the application URL with your guests
+4. Monitor responses in your Notion database in real-time
+
+### Setting up Notion Integration
+
+1. Create a page in Notion and start an empty database with these properties:
+
+- Add a column **Nome** with type title
+- Add a column **Resposta** with type select
+
+2. Go to [Notion Integrations](https://www.notion.so/profile/integrations) page
+3. Create a new integration with these settings:
+
+- Associated workspace: select a workspace
+- Type: Internal
+- Capabilities: Insert content
+- User capabilities: No user information
+- Access: select a database
+
+4. Copy the **Internal Integration Secret**
+5. Copy the **database ID** from the URL
+6. Paste into your environment variables
+
+## Built With
+
+- **Next.js:** React framework for building full-stack web applications
+- **TypeScript:** Static typing for JavaScript
+- **Tailwind CSS:** CSS framework with utility-first classes approach
+- **Notion:** Database integration
+- **ESLint:** Static code analysis
+- **Lucide React:** Beautiful and consistent icons library
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
