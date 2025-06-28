@@ -78,19 +78,15 @@ npm run dev
 ### Setting up Notion Integration
 
 1. Create a page in Notion and start an empty database with these properties:
-
-- Add a column **Nome** with type title
-- Add a column **Resposta** with type select
-
+   - Add a column **"Nome"** with type title
+   - Add a column **"Resposta"** with type select
 2. Go to [Notion Integrations](https://www.notion.so/profile/integrations) page
 3. Create a new integration with these settings:
-
-- Associated workspace: select a workspace
-- Type: Internal
-- Capabilities: Insert content
-- User capabilities: No user information
-- Access: select a database
-
+   - Associated workspace: Select a workspace
+   - Type: Internal
+   - Capabilities: Insert content
+   - User capabilities: No user information
+   - Access: Select a database
 4. Copy the **Internal Integration Secret**
 5. Copy the **database ID** from the URL
 6. Paste into your environment variables
