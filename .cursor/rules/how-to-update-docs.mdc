@@ -1,0 +1,51 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+
+# How to update the README.md
+
+This guide provides detailed instructions for effective modifications to the [README.md](mdc:README.md) file, following best practices for documentation and collaboration.
+
+---
+
+## Structure
+
+- Title: Project name.
+- Purpose: Explain the purpose of the project, what it does, and who it benefits.
+- Prerequisites: List everything the user needs before attempting to install the application (e.g., Node.js, Docker, database Y).
+- Installation guide: A clear and concise step-by-step guide so that anyone can install and run the project on their own machine.
+- Environment variables: List and describe all required environment variables for the application to run properly.
+- Features: List all the main features of the project and indicate the relevant screens and pages.
+- How to use: Teach the user how to navigate the application and achieve the project's goals. Include instructions, if necessary, on how to configure specific resources—for example, how to obtain API keys from service Z.
+- Technologies: List the main technologies used to build the project.
+- License: Define the usage terms of your code and refer to the LICENSE file in the repository.
+
+---
+
+## Best Practices
+
+- Always write in English.
+- Focus on write short paragraphs, like 3 lines maximum.
+- Write clear, objective and inclusive language.
+- Use markdown correctly for headings, lists, code blocks, links, and images.
+
+---
+
+## Don'ts
+
+- Don't expose senstitive information.
+- Don't use informal language or slang.
+- Don't include irrelevant or personal information.
+
+---
+
+## References
+
+- See the [MeuBanco](mdc:https:/github.com/rodrigofontesdev/bank/blob/main/README.md) documentation.
+- See the [PHPISH](mdc:https:/github.com/rodrigofontesdev/phpish/blob/main/README.md) documentation.
+- See the [CEP](mdc:https:/github.com/rodrigofontesdev/cep/blob/main/README.md) documentation.
+- See the [FPF](mdc:https:/github.com/rodrigofontesdev/fpf/blob/main/README.md) documentation.
+- See the [GitHub Blog](mdc:https:/github.com/rodrigofontesdev/blog/blob/main/README.md) documentation.
+- See the [GitHub Markdown](mdc:https:/docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) basic writing and syntax.
