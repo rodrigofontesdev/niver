@@ -1,12 +1,14 @@
+![preview](https://github.com/user-attachments/assets/74c7ac54-7797-43b3-87c8-6b3dfceebb8f)
+
 # Niver
 
-Niver simplifies the process of collecting and managing birthday party confirmations. The application provides an intuitive user experience for guests to confirm their attendance while automatically storing responses in a Notion database for easy organization and tracking.
+Niver makes it super easy to collect and manage RSVPs for birthday parties. Guests can quickly confirm their attendance through a simple and friendly interface, and all the responses go straight into a Notion database.
 
 ## Prerequisites
 
 - Git
 - Node
-- Notion account
+- Notion
 
 ## Getting Started
 
@@ -47,10 +49,10 @@ npm run dev
 
 ## Features
 
-- Automatic data storage in organized database
+- Automatically saves responses in a well-organized database
 - Personalized confirmation message based on response
 - Optimized for both desktop and mobile devices
-- Full accessibility with Enter key and letter shortcuts
+- Fully accessible with Enter key and letter shortcuts
 
 ## How to Use
 
@@ -95,7 +97,7 @@ npm run dev
 
 - **Next.js:** React framework for building full-stack web applications
 - **TypeScript:** Static typing for JavaScript
-- **Tailwind CSS:** CSS framework with utility-first classes approach
+- **Tailwind CSS:** Utility-first CSS framework for fast and flexible styling
 - **Notion:** Database integration
 - **ESLint:** Static code analysis
 - **Lucide React:** Beautiful and consistent icons library
