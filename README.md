@@ -1,3 +1,5 @@
+![preview](https://github.com/user-attachments/assets/74c7ac54-7797-43b3-87c8-6b3dfceebb8f)
+
 # Niver
 
 Niver simplifies the process of collecting and managing birthday party confirmations. The application provides an intuitive user experience for guests to confirm their attendance while automatically storing responses in a Notion database for easy organization and tracking.
